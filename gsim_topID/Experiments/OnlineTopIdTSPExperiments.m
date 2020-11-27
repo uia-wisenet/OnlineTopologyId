@@ -20,7 +20,7 @@ classdef OnlineTopIdTSPExperiments < ExperimentFunctionSet
             %% Simulation parameters
             noOfNodes        = 12;
             filtOrder        = 2;
-            noOfExperiments  = 50; % Expected experiment duration = 100 minutes
+            noOfExperiments  = 50; 
             noOfObservations = 3000;
             EdgeProbability  = 0.2;
             syntheticSigma   = 0.005;
@@ -384,7 +384,7 @@ classdef OnlineTopIdTSPExperiments < ExperimentFunctionSet
             % their right place (ProcessingBlocks)
             
             %% Configuration
-            noOfMCitr   = 200;
+            noOfMCitr   =  200;
             noOfNodes   = 10;
             filterOrder = 2;
             niterPGD    = 5;
@@ -447,7 +447,6 @@ classdef OnlineTopIdTSPExperiments < ExperimentFunctionSet
             % Adaptive, non-diminishing stepsize
             % Stationary VAR Process
             % Fixed threshold for identifying nonzero edge
-            % NMSD, NMSE, and EIER
             %% Parameters %%
             noOfNodes        = 12;
             filtOrder        = 2;
@@ -459,7 +458,7 @@ classdef OnlineTopIdTSPExperiments < ExperimentFunctionSet
             f_factor         = 0.98;
             
             %% Synthetic Data Generator
-            %rng(3);
+            rng(3);
             m_adjacency = (rand(noOfNodes)<erdosRenyiEdgeProbability)...
                 .*not(eye(noOfNodes));
             myGraph = Graph('m_adjacency',m_adjacency);
@@ -641,7 +640,7 @@ classdef OnlineTopIdTSPExperiments < ExperimentFunctionSet
             transitionPar    = TimeVaryingVARSTFunctionGenerator.stParameter(...
                 0.99, transitionTime);
             % determines the speed of the transition(the higher, the faster)
-            noOfExperiments  = 50; %Monte Carlo iterations
+            noOfExperiments  = 50; % 300 Monte Carlo iterations
             erdosRenyiEdgeProbability = 0.2;
             syntheticSigma   = 0.005;
             regPar           = 1e-6;
@@ -755,7 +754,7 @@ classdef OnlineTopIdTSPExperiments < ExperimentFunctionSet
             % Smooth-Transition nonstationary VAR Process
             noOfNodes        = 12;
             filtOrder        = 2;
-            noOfExperiments  = 50;
+            noOfExperiments  = 200; % 200
             noOfObservations = 3000;
             transitionTime   = noOfObservations/3;
             transitionPar    = TimeVaryingVARSTFunctionGenerator.stParameter(...

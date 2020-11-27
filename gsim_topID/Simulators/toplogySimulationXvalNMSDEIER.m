@@ -76,8 +76,8 @@ for regparIndex=1:noOfRegPars
         Aux1= reshape(Aux, [P,N,N]);
         Aux2= permute(Aux1,[3,2,1]);
         m_inferredAdjacency= norms(Aux2,2,3);
-        [~,~,~,~,m_EIERregPars(time,regparIndex)]= ...
-            TISOTIRSOExperiments.computeEierMissdetectionFalsealarm(...
+        [~,~,m_EIERregPars(time,regparIndex)]= ...
+            OnlineTopIdTSPExperiments.computeEierMissdetectionFalsealarm(...
             threshold,N,trueWeightedAdjacency, m_inferredAdjacency);
     end
     EIERSumRegPars(regparIndex)= sum(m_EIERregPars(:,regparIndex));
@@ -89,10 +89,4 @@ lambda_xvalNMSD= regPars(minIndexNMSD);
 % computing the value of regPar with minimum EIER
 [~,minIndexEIER]=min(EIERSumRegPars);
 lambda_xvalEIER= regPars(minIndexEIER);
-% Plotting both the curves
-xaxis=1:noOfRegPars;
-semilogy(xaxis,NMSDSumRegPars)
-hold on
-semilogy(xaxis,EIERSumRegPars)
-legend('NMSD','EIER')
 end
