@@ -962,7 +962,7 @@ classdef OnlineTopIdTSPExperiments < ExperimentFunctionSet
             % 12 hours of operation
             
             nSensors      = 24; 
-            nHours        = 12; %!3
+            nHours        = 12; 
             nTimeInstants = 6*60*nHours;
             n_toPredict   = 1; %!
             
