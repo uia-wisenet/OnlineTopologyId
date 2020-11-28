@@ -9,7 +9,7 @@ The folder **gsim_topID** contains the MATLAB code for generating the figures of
 
 ## Guidelines
 To run the code to replicate the experiments, please follow these steps after downloading the code:
-* enter the folder **gsim_onlineTopID** and run ```gsimStartup```. This will generate ```gsim.m```in **gsim_onlineTopID**.
+* enter the folder **gsim_topID** and run ```gsimStartup```. This will generate ```gsim.m```in **gsim_topID**.
 * The file ```Experiments\OnlineTopIdTSPExperiments.m``` contains all the experiments in the paper. Each experiment is a method identified with a number corresponding to the figure it generates.
 
 * One can execute the experiment, or see the saved experiment results (without actually re-running the experiment) in **Experiments\OnlineTopIdTSPExperiments**. The first argument passed to gsim is an "onlyplot" flag:
