@@ -4,7 +4,7 @@ Codes for replicating results in paper:
 B. Zaman, L. M. Lopez-Ramos, D. Romero, B. Beferull-Lozano, “Online Topology Identification from Vector Autoregressive Time-series”, To appear in IEEE Transactions on Signal Processing. 
 
 ## Introduction
-The folder gsim_onlineTopID contains the MATLAB code for generating the figures of the simulation results in the paper.
+The folder gsim_topID contains the MATLAB code for generating the figures of the simulation results in the paper.
 
 
 ## Guidelines
