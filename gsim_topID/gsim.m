@@ -42,7 +42,7 @@ initializeGsim.initializePath;
 global displaySettings
 
 % EXECUTION PARAMETERS - EDIT =============================================
-defaultExperimentClassName   = 'OnlineTopIDTSPExperiments';
+defaultExperimentClassName   = 'OnlineTopIdTSPExperiments';
 % defaultExperimentClassName = 'TutorialGfigureExperiments';
 
 defaultExperimentIndex = 1001; 

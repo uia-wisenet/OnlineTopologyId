@@ -177,7 +177,7 @@ classdef VARSTFunctionGenerator < STFunctionGenerator
                     m_signalTest = m_signal(:,obj.nTimeSamples+1:end);
                 end
                 if nargout>3
-                    SNR = 1 + mean(norms(m_signal_beforeNoise(:,(nSamplesToDiscard+1):end)).^2)...
+                    SNR = 1 + mean(vecnorm(m_signal_beforeNoise(:,(nSamplesToDiscard+1):end)).^2)...
                         /(nTimeSeries*my_sigma.^2);
                 end
             end
@@ -270,7 +270,7 @@ classdef VARSTFunctionGenerator < STFunctionGenerator
             elseif nd==3
                 [N,N2,P]=size(tensor_A);
                 assert(N==N2);
-                adjacencyMatrix= reshape(norms(reshape(tensor_A,[N*N, P]), 2, 2), [N,N]);
+                adjacencyMatrix= reshape(vecnorm(reshape(tensor_A,[N*N, P]), 2, 2), [N,N]);
             else
                 error('Use VARCoefficients2AdjacencyMatrices method if ndims>3')
 
@@ -286,7 +286,7 @@ classdef VARSTFunctionGenerator < STFunctionGenerator
                 warning('Use VARCoefficients2AdjacencyMatrix instead  ')
                 [N,N2,P]=size(tensor_A);
                 assert(N==N2);
-                adjacencyMatrix= reshape(norms(reshape(tensor_A,[N*N, P]), 2, 2), [N,N]);
+                adjacencyMatrix= reshape(vecnorm(reshape(tensor_A,[N*N, P]), 2, 2), [N,N]); %! it was norms before
             else
 %                 tensorB=permute(tensor_A,[1 2 4:nd 3]);
 %                 vs= size(tensorB);
@@ -295,7 +295,7 @@ classdef VARSTFunctionGenerator < STFunctionGenerator
 %                 adjacencyMatrix=ipermute(permutedAdjacencyMatrix, [1 2 4:nd]);
                 [N,N2,P]=size(tensor_A);
                 assert(N==N2);
-                adjacencyMatrix= norms(tensor_A,2,3);
+                adjacencyMatrix= vecnorm(tensor_A,2,3); %! it was norms before
             end
         end
         
